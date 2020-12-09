@@ -1,0 +1,11 @@
+[package]
+authors = ["Linus <linus@cosmos-ink.net>"]
+edition = "2018"
+name = "adventofcode-2020"
+version = "0.1.0"
+
+[dependencies]
+aoc-runner = "0.3.0"
+aoc-runner-derive = "0.3.0"
+itertools = "0.9.0"
+anyhow = "1.0.35"
