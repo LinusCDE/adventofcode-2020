@@ -3,7 +3,7 @@ use anyhow::Result;
 #[aoc_generator(day1)]
 pub fn parse_input(input: &str) -> Vec<u16> {
     input
-        .split("\n")
+        .split('\n')
         .map(|line| line.parse().unwrap())
         .collect()
 }
