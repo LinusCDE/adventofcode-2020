@@ -81,3 +81,15 @@ So far, this are the timings of solving the puzzles on my Ryzen 3700X CPU:
 | 2    | 13.152 us | 13.177 us | 13.208 us |
 
 </details>
+
+### Day 6
+
+<details>
+<summary>113.1 ns + 180.4 us </summary>
+
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 112.82 ns | 113.08 ns | 113.39 ns |
+| 2    | 179.83 us | 180.44 us | 181.10 us |
+
+</details>
