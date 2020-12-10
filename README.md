@@ -20,7 +20,7 @@ Now you can run any days solutions using `cargo aoc -d <DAY> (-p <1/2>)`. Benchm
 
 ## Benches
 
-So far, this are the timings of solving the puzzles on my Ryzen 3700X CPU:
+So far, these are the timings of solving the puzzles on my Ryzen 3700X CPU:
 
 ### Day 1
 
