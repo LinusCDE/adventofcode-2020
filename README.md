@@ -105,3 +105,24 @@ change: [+0.1740% +0.9562% +1.7658%] (p = 0.02 < 0.05)
 Change within noise threshold.
 ```
 </details>
+
+### Day 5
+
+<details>
+
+<summary>Part 1: 342.5 ns | Part 2: 13.2 us us</summary>
+
+**Part 1**
+```
+time:   [340.58 ns 342.48 ns 345.07 ns]
+change: [-0.7969% +0.0076% +0.8398%] (p = 0.98 > 0.05)
+No change in performance detected.
+```
+
+**Part 2**
+```
+[13.152 us 13.177 us 13.208 us]
+change: [+1.4245% +1.6505% +1.9001%] (p = 0.00 < 0.05)
+Performance has regressed.
+```
+</details>
