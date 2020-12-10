@@ -37,6 +37,19 @@ pub fn solve_part1(input: &Vec<Seat>) -> u16 {
 }
 
 #[aoc(day5, part2)]
-pub fn solve_part2(input: &Vec<Seat>) -> usize {
-    todo!()
+pub fn solve_part2(input: &Vec<Seat>) -> Result<u16> {
+    let mut ids: Vec<u16> = input.iter().map(|seat| seat.seat_id()).collect();
+    ids.sort();
+
+    let mut last_id = ids[0] - 1;
+    for id in ids {
+        // If this id is not last_id + 1, there was a gab.
+        // The seat after the gap is our seat id.
+        if id != last_id + 1 {
+            return Ok(last_id + 1);
+        }
+        last_id = id;
+    }
+
+    Err(anyhow!("SeatID not found!"))
 }
