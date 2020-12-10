@@ -22,7 +22,8 @@ Now you can run any days solutions using `cargo aoc -d <DAY> (-p <1/2>)`. Benchm
 
 So far, this are the timings of solving the puzzles on my Ryzen 3700X CPU:
 
-### Day 1
+<details>
+<summary><h3>Day 1</h3></summary>
 
 **Part 1**
 ```
@@ -37,8 +38,10 @@ time:   [987.66 us 1.0014 ms 1.0195 ms]
 change: [+0.8968% +2.9449% +5.1670%] (p = 0.01 < 0.05)
 Change within noise threshold.
 ```
+</details>
 
-### Day 2
+<details>
+<summary><h3>Day 2</h3></summary>
 
 **Part 1**
 ```
@@ -53,8 +56,10 @@ time:   [80.131 us 80.889 us 81.735 us]
 change: [-4.3173% -3.5318% -2.7307%] (p = 0.00 < 0.05)
 Performance has improved.
 ```
+</details>
 
-### Day 3
+<details>
+<summary><h3>Day 3</h3></summary>
 
 **Part 1**
 ```
@@ -69,8 +74,10 @@ time:   [5.6236 us 5.6277 us 5.6325 us]
 change: [-0.0757% +0.1160% +0.2977%] (p = 0.23 > 0.05)
 No change in performance detected.
 ```
+</details>
 
-### Day 4
+<details>
+<summary><h3>Day 4</h3></summary>
 
 **Part 1**
 ```
@@ -85,3 +92,4 @@ time:   [77.007 us 77.584 us 78.244 us]
 change: [+0.1740% +0.9562% +1.7658%] (p = 0.02 < 0.05)
 Change within noise threshold.
 ```
+</details>
