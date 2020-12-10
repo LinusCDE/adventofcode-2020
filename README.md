@@ -25,6 +25,7 @@ So far, this are the timings of solving the puzzles on my Ryzen 3700X CPU:
 ### Day 1
 
 <details>
+
 **Part 1**
 ```
 time:   [4.9735 us 5.0120 us 5.0561 us]
@@ -43,6 +44,7 @@ Change within noise threshold.
 ### Day 2
 
 <details>
+
 **Part 1**
 ```
 time:   [60.475 us 60.732 us 60.992 us]
@@ -61,6 +63,7 @@ Performance has improved.
 ### Day 3
 
 <details>
+
 **Part 1**
 ```
 time:   [1.2403 us 1.2423 us 1.2450 us]
@@ -79,6 +82,7 @@ No change in performance detected.
 ### Day 4
 
 <details>
+
 **Part 1**
 ```
 time:   [33.950 us 34.142 us 34.391 us]
