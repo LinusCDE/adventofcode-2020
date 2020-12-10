@@ -1,4 +1,3 @@
-use anyhow::Result;
 use regex::Regex;
 
 #[derive(Debug)]
