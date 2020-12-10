@@ -1,5 +1,4 @@
 use anyhow::Result;
-use regex::Regex;
 
 pub struct Map {
     data_width: usize,
