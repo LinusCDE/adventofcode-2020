@@ -1,4 +1,3 @@
-use anyhow::Result;
 use std::collections::{HashMap, HashSet};
 
 type GroupAnswers = HashMap<char /*Question*/, HashSet<u8> /*Per group person numbers who answered yes */>;
@@ -29,6 +28,15 @@ pub fn solve_part1(input: &Vec<GroupAnswers>) -> usize {
 }
 
 #[aoc(day6, part2)]
-pub fn solve_part2(input: &Vec<GroupAnswers>) -> Result<u16> {
-    todo!()
+pub fn solve_part2(input: &Vec<GroupAnswers>) -> usize {
+    input
+        .iter()
+        .map(|ga| {
+            // The first person in a group has the number one.
+            // Ergo the person count is the highest person_number.
+            let person_count = *ga.values().flatten().max().unwrap() as usize;
+            // Count all answer sets, where the size is equal to the total persons
+            ga.values().filter(|set| set.len() == person_count).count()
+        })
+        .sum()
 }
