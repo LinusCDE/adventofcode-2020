@@ -25,104 +25,59 @@ So far, this are the timings of solving the puzzles on my Ryzen 3700X CPU:
 ### Day 1
 
 <details>
+<summary>5.0 us + 1.0 ms</summary>
 
-<summary>Part 1: 5.0 us | Part 2: 1.0 ms</summary>
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 4.9735 us | 5.0120 us | 5.0561 us |
+| 2    | 987.66 us | 1.0014 ms | 1.0195 ms |
 
-**Part 1**
-```
-time:   [4.9735 us 5.0120 us 5.0561 us]
-change: [+0.1240% +1.2758% +2.4500%] (p = 0.03 < 0.05)
-Change within noise threshold.
-```
-
-**Part 2**
-```
-time:   [987.66 us 1.0014 ms 1.0195 ms]
-change: [+0.8968% +2.9449% +5.1670%] (p = 0.01 < 0.05)
-Change within noise threshold.
-```
 </details>
 
 ### Day 2
 
 <details>
+<summary>60.7 us + 80.9 us</summary>
 
-<summary>Part 1: 60.7 us | Part 2: 80.9 us</summary>
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 60.475 us | 60.732 us | 60.992 us |
+| 2    | 80.131 us | 80.889 us | 81.735 us |
 
-**Part 1**
-```
-time:   [60.475 us 60.732 us 60.992 us]
-change: [-1.4374% -1.0619% -0.6705%] (p = 0.00 < 0.05)
-Change within noise threshold.
-```
-
-**Part 2**
-```
-time:   [80.131 us 80.889 us 81.735 us]
-change: [-4.3173% -3.5318% -2.7307%] (p = 0.00 < 0.05)
-Performance has improved.
-```
 </details>
 
 ### Day 3
 
 <details>
+<summary>1.2 us + 5.6 us</summary>
 
-<summary>Part 1: 1.2 us | Part 2: 5.6 us</summary>
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 1.2403 us | 1.2423 us | 1.2450 us |
+| 2    | 5.6236 us | 5.6277 us | 5.6325 us |
 
-**Part 1**
-```
-time:   [1.2403 us 1.2423 us 1.2450 us]
-change: [-0.0955% +0.2115% +0.5370%] (p = 0.18 > 0.05)
-No change in performance detected.
-```
-
-**Part 2**
-```
-time:   [5.6236 us 5.6277 us 5.6325 us]
-change: [-0.0757% +0.1160% +0.2977%] (p = 0.23 > 0.05)
-No change in performance detected.
-```
 </details>
 
 ### Day 4
 
 <details>
+<summary>34.1 us + 77.6 us</summary>
 
-<summary>Part 1: 34.1 us | Part 2: 77.6 us</summary>
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 33.950 us | 34.142 us | 34.391 us |
+| 2    | 77.007 us | 77.584 us | 78.244 us |
 
-**Part 1**
-```
-time:   [33.950 us 34.142 us 34.391 us]
-change: [+2.9915% +3.8458% +4.9158%] (p = 0.00 < 0.05)
-Performance has regressed.
-```
-
-**Part 2**
-```
-time:   [77.007 us 77.584 us 78.244 us]
-change: [+0.1740% +0.9562% +1.7658%] (p = 0.02 < 0.05)
-Change within noise threshold.
-```
 </details>
 
 ### Day 5
 
 <details>
+<summary>342.5 ns + 13.2 us us</summary>
 
-<summary>Part 1: 342.5 ns | Part 2: 13.2 us us</summary>
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 340.58 ns | 342.48 ns | 345.07 ns |
+| 2    | 13.152 us | 13.177 us | 13.208 us |
 
-**Part 1**
-```
-time:   [340.58 ns 342.48 ns 345.07 ns]
-change: [-0.7969% +0.0076% +0.8398%] (p = 0.98 > 0.05)
-No change in performance detected.
-```
-
-**Part 2**
-```
-[13.152 us 13.177 us 13.208 us]
-change: [+1.4245% +1.6505% +1.9001%] (p = 0.00 < 0.05)
-Performance has regressed.
-```
 </details>
