@@ -25,60 +25,60 @@ So far, these are the timings of solving the puzzles on my Ryzen 3700X CPU:
 ### Day 1
 
 <details>
-<summary>5.0 us + 1.0 ms</summary>
+<summary>113.9 ns + 181.7 us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
-| 1    | 4.9735 us | 5.0120 us | 5.0561 us |
-| 2    | 987.66 us | 1.0014 ms | 1.0195 ms |
+| 1    | 113.37 ns | 113.91 ns | 114.62 ns |
+| 2    | 181.18 us | 181.72 us | 182.32 us |
 
 </details>
 
 ### Day 2
 
 <details>
-<summary>60.7 us + 80.9 us</summary>
+<summary>114.5 ns + 178.9 us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
-| 1    | 60.475 us | 60.732 us | 60.992 us |
-| 2    | 80.131 us | 80.889 us | 81.735 us |
+| 1    | 114.01 ns | 114.46 ns | 114.94 ns |
+| 2    | 178.42 us | 178.91 us | 179.51 us |
 
 </details>
 
 ### Day 3
 
 <details>
-<summary>1.2 us + 5.6 us</summary>
+<summary>111.9 ns + 182.9 us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
-| 1    | 1.2403 us | 1.2423 us | 1.2450 us |
-| 2    | 5.6236 us | 5.6277 us | 5.6325 us |
+| 1    | 111.68 ns | 111.93 ns | 112.24 ns |
+| 2    | 182.51 us | 182.91 us | 183.34 us |
 
 </details>
 
 ### Day 4
 
 <details>
-<summary>34.1 us + 77.6 us</summary>
+<summary>113.8 ns + 181.4 us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
-| 1    | 33.950 us | 34.142 us | 34.391 us |
-| 2    | 77.007 us | 77.584 us | 78.244 us |
+| 1    | 113.51 ns | 113.76 ns | 114.07 ns |
+| 2    | 180.90 us | 181.38 us | 182.24 us |
 
 </details>
 
 ### Day 5
 
 <details>
-<summary>342.5 ns + 13.2 us</summary>
+<summary>114.8 ns + 181.0 us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
-| 1    | 340.58 ns | 342.48 ns | 345.07 ns |
-| 2    | 13.152 us | 13.177 us | 13.208 us |
+| 1    | 114.51 ns | 114.82 ns | 115.13 ns |
+| 2    | 180.62 us | 180.99 us | 181.44 us |
 
 </details>
 
