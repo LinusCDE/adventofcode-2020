@@ -57,6 +57,20 @@ impl Bags {
 
         return false;
     }
+
+    pub fn get_bag_containments_recursivly(&self, bag: Bag) -> Vec<(Bag, usize)> {
+        let mut vec: Vec<(Bag, usize)> = vec![];
+        if let Some(containments) = self.get_bag_containments(bag) {
+            for (contained, amount) in containments {
+                vec.push((*contained, *amount as usize));
+                for (sub_contained_bag, sub_contained_amount) in self.get_bag_containments_recursivly(*contained) {
+                    vec.push((sub_contained_bag, *amount as usize * sub_contained_amount as usize));
+                }
+            }
+        }
+
+        return vec;
+    }
 }
 
 #[aoc_generator(day7)]
@@ -96,6 +110,7 @@ pub fn solve_part1(input: &Bags) -> Result<usize> {
 }
 
 #[aoc(day7, part2)]
-pub fn solve_part2(input: &Bags) -> usize {
-    todo!()
+pub fn solve_part2(input: &Bags) -> Result<usize> {
+    let oh_shiny = input.get_bag("shiny gold").ok_or(anyhow!("Shiny gold bag not found"))?;
+    Ok(input.get_bag_containments_recursivly(oh_shiny).iter().map(|(_, amount)| *amount).sum())
 }
