@@ -107,3 +107,15 @@ So far, these are the timings of solving the puzzles on my Ryzen 3700X CPU:
 Note: The implementation of Part 1 was not optimized meaningfully. It could be optimized by either passing along a "contains cache" or recursing up from children.
 
 </details>
+
+### Day 8
+
+<details>
+<summary>7.4us + 1.1ms</summary>
+
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 7.4319 us | 7.4430 us | 7.4536 us |
+| 2    | 1.0777 ms | 1.0795 ms | 1.0813 ms |
+
+</details>
