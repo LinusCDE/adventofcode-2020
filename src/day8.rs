@@ -36,7 +36,9 @@ pub enum ExecutionResult {
         acc: i16,
     },
     /// Terminates when running the instruction after the max pc
-    Terminated,
+    Terminated {
+        acc: i16,
+    },
 }
 
 pub fn run_program(instructions: &Vec<Instruction>) -> ExecutionResult {
@@ -48,7 +50,7 @@ pub fn run_program(instructions: &Vec<Instruction>) -> ExecutionResult {
     loop {
         // Check for sucess
         if pc == instructions.len() as i16 {
-            return ExecutionResult::Terminated;
+            return ExecutionResult::Terminated { acc };
         }
         // Check for duplicate
         if !visited_pcs.insert(pc) {
@@ -77,11 +79,34 @@ pub fn run_program(instructions: &Vec<Instruction>) -> ExecutionResult {
 pub fn solve_part1(input: &Vec<Instruction>) -> Result<i16> {
     match run_program(input) {
         ExecutionResult::InfiniteLoop { acc } => Ok(acc),
-        ExecutionResult::Terminated => Err(anyhow!("Not expected to terminate!")),
+        ExecutionResult::Terminated { .. } => Err(anyhow!("Not expected to terminate!")),
     }
 }
 
 #[aoc(day8, part2)]
-pub fn solve_part2(input: &Vec<Instruction>) -> Result<usize> {
-    todo!()
+pub fn solve_part2(input: &Vec<Instruction>) -> Result<i16> {
+    let mut input = input.clone();
+
+    for i in 0..input.len() {
+        let (operation, argument) = input[i];
+        match operation {
+            Operation::JMP => {
+                input[i] = (Operation::NOP, argument); // Swap JMP with NOP
+                if let ExecutionResult::Terminated { acc } = run_program(&input) {
+                    return Ok(acc);
+                }
+                input[i] = (operation, argument); // Restore
+            }
+            Operation::NOP => {
+                input[i] = (Operation::JMP, argument); // Swap NOP with JMP
+                if let ExecutionResult::Terminated { acc } = run_program(&input) {
+                    return Ok(acc);
+                }
+                input[i] = (operation, argument); // Restore
+            }
+            Operation::ACC => {}
+        }
+    }
+
+    Err(anyhow!("No solution found!"))
 }
