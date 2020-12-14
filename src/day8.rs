@@ -1,6 +1,6 @@
 use anyhow::Result;
+use fxhash::FxHashSet;
 use rayon::prelude::*;
-use std::collections::HashSet;
 use std::convert::TryFrom;
 
 type Instruction = (Operation, i16);
@@ -46,7 +46,7 @@ pub fn run_program(instructions: &Vec<Instruction>) -> ExecutionResult {
     let mut pc: i16 = 0;
     let mut acc: i16 = 0;
 
-    let mut visited_pcs = HashSet::new();
+    let mut visited_pcs = FxHashSet::default();
 
     loop {
         // Check for sucess
