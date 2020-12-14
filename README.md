@@ -111,17 +111,28 @@ Note: The implementation of Part 1 was not optimized meaningfully. It could be o
 ### Day 8
 
 <details>
-<summary>7.4us + 172.9us</summary>
+<summary>3.2us + 84.9us</summary>
+
+| Part | Min       | Avg       | Max       | Note                        |
+| ---- | --------- | --------- | --------- | --------------------------- |
+| 1    | 7.4319 us | 7.4430 us | 7.4536 us |                             |
+| 2    | 1.0777 ms | 1.0795 ms | 1.0813 ms | Initial solution (4afbe335) |
+
+#### Parallelizing Part 2
 
 | Part | Min       | Avg       | Max       | Note                             |
 | ---- | --------- | --------- | --------- | -------------------------------- |
-| 1    | 7.4319 us | 7.4430 us | 7.4536 us |                                  |
-| 2    | 1.0777 ms | 1.0795 ms | 1.0813 ms | Initial solution (4afbe335)      |
 | 2    | 169.12 us | 172.90 us | 177.49 us | Palallized with rayon (1d7c887c) |
 
-Notes:
+Note: More than 5 times faster
 
-- Using [rayon](https://lib.rs/rayon)s into_par_iter() function made the test run aprox 5 times faster on my Ryzen 3700X.
-  Copying the instructions for every loop didn't introduce a noticable performance penalty even without parallelization.
+#### Use fxhash
+
+| Part | Min       | Avg       | Max       | Note                    |
+| ---- | --------- | --------- | --------- | ----------------------- |
+| 1    | 3.1714 us | 3.1867 us | 3.2112 us | Using fxhash (b224c911) |
+| 2    | 83.605 us | 84.886 us | 86.271 us | Using fxhash (b224c911) |
+
+Note: More than 2 times faster
 
 </details>
