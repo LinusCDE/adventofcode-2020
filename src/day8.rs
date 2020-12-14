@@ -17,47 +17,67 @@ pub fn parse_input(input: &str) -> Vec<Instruction> {
         .split('\n')
         .map(|line| {
             let words: Vec<&str> = line.split(' ').collect();
-            let instruction = match words[0] {
+
+            let operation = match words[0] {
                 "acc" => Operation::ACC,
                 "jmp" => Operation::JMP,
                 "nop" => Operation::NOP,
                 _ => unreachable!("Unexpected instruction!"),
             };
             let argument = words[1].parse().expect("Failed to parse argument!");
-            (instruction, argument)
+
+            (operation, argument)
         })
         .collect()
 }
 
-#[aoc(day8, part1)]
-pub fn solve_part1(input: &Vec<Instruction>) -> i16 {
+pub enum ExecutionResult {
+    InfiniteLoop {
+        acc: i16,
+    },
+    /// Terminates when running the instruction after the max pc
+    Terminated,
+}
+
+pub fn run_program(instructions: &Vec<Instruction>) -> ExecutionResult {
     let mut pc: i16 = 0;
     let mut acc: i16 = 0;
 
     let mut visited_pcs = HashSet::new();
 
     loop {
-        // Check for duplicate
-        if visited_pcs.contains(&pc) {
-            return acc;
+        // Check for sucess
+        if pc == instructions.len() as i16 {
+            return ExecutionResult::Terminated;
         }
-        visited_pcs.insert(pc);
+        // Check for duplicate
+        if !visited_pcs.insert(pc) {
+            return ExecutionResult::InfiniteLoop { acc };
+        }
 
         // Fetch
-        let (op, arg) = input[usize::try_from(pc).expect("Invalid PC!")];
+        let (operation, argument) = instructions[usize::try_from(pc).expect("Invalid PC!")];
         // Execute
-        match op {
+        match operation {
             Operation::ACC => {
-                acc += arg;
+                acc += argument;
                 pc += 1;
             }
             Operation::JMP => {
-                pc += arg;
+                pc += argument;
             }
             Operation::NOP => {
                 pc += 1;
             }
         }
+    }
+}
+
+#[aoc(day8, part1)]
+pub fn solve_part1(input: &Vec<Instruction>) -> Result<i16> {
+    match run_program(input) {
+        ExecutionResult::InfiniteLoop { acc } => Ok(acc),
+        ExecutionResult::Terminated => Err(anyhow!("Not expected to terminate!")),
     }
 }
 
