@@ -1,10 +1,11 @@
 use anyhow::Result;
-use std::collections::{HashMap, HashSet};
+use rayon::prelude::*;
+use std::collections::HashSet;
 use std::convert::TryFrom;
 
 type Instruction = (Operation, i16);
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum Operation {
     ACC,
     JMP,
@@ -85,28 +86,31 @@ pub fn solve_part1(input: &Vec<Instruction>) -> Result<i16> {
 
 #[aoc(day8, part2)]
 pub fn solve_part2(input: &Vec<Instruction>) -> Result<i16> {
-    let mut input = input.clone();
+    (0..input.len())
+        .into_par_iter()
+        .find_map_first(|i| {
+            let (operation, argument) = input[i];
 
-    for i in 0..input.len() {
-        let (operation, argument) = input[i];
-        match operation {
-            Operation::JMP => {
-                input[i] = (Operation::NOP, argument); // Swap JMP with NOP
-                if let ExecutionResult::Terminated { acc } = run_program(&input) {
-                    return Ok(acc);
-                }
-                input[i] = (operation, argument); // Restore
-            }
-            Operation::NOP => {
-                input[i] = (Operation::JMP, argument); // Swap NOP with JMP
-                if let ExecutionResult::Terminated { acc } = run_program(&input) {
-                    return Ok(acc);
-                }
-                input[i] = (operation, argument); // Restore
-            }
-            Operation::ACC => {}
-        }
-    }
+            if operation != Operation::ACC {
+                let mut instructions = input.clone();
 
-    Err(anyhow!("No solution found!"))
+                match operation {
+                    Operation::JMP => {
+                        instructions[i] = (Operation::NOP, argument); // Swap JMP with NOP
+                        if let ExecutionResult::Terminated { acc } = run_program(&instructions) {
+                            return Some(acc);
+                        }
+                    }
+                    Operation::NOP => {
+                        instructions[i] = (Operation::JMP, argument); // Swap NOP with JMP
+                        if let ExecutionResult::Terminated { acc } = run_program(&instructions) {
+                            return Some(acc);
+                        }
+                    }
+                    Operation::ACC => unreachable!(),
+                }
+            }
+            None
+        })
+        .ok_or(anyhow!("No solution found!"))
 }
