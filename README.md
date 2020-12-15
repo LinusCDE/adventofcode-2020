@@ -70,10 +70,10 @@ So far, these are the timings of solving the puzzles on my Ryzen 3700X CPU:
 
 #### fxhash used
 
-| Part | Min       | Avg       | Max       | Note                |
-| ---- | --------- | --------- | --------- | ------------------- |
-| 1    | 15.760 us | 15.806 us | 15.878 us | Using fxhash (TODO) |
-| 2    | 39.888 us | 40.126 us | 40.463 us | Using fxhash (TODO) |
+| Part | Min       | Avg       | Max       | Note                    |
+| ---- | --------- | --------- | --------- | ----------------------- |
+| 1    | 15.760 us | 15.806 us | 15.878 us | Using fxhash (a6b434af) |
+| 2    | 39.888 us | 40.126 us | 40.463 us | Using fxhash (a6b434af) |
 
 Note: About times 2 faster
 
@@ -103,10 +103,10 @@ Note: About times 2 faster
 
 #### fxhash used
 
-| Part | Min       | Avg       | Max       | Note                |
-| ---- | --------- | --------- | --------- | ------------------- |
-| 1    | 112.64 ns | 112.84 ns | 113.10 ns | Using fxhash (TODO) |
-| 2    | 139.82 us | 140.35 us | 140.98 us | Using fxhash (TODO) |
+| Part | Min       | Avg       | Max       | Note                    |
+| ---- | --------- | --------- | --------- | ----------------------- |
+| 1    | 112.64 ns | 112.84 ns | 113.10 ns | Using fxhash (a6b434af) |
+| 2    | 139.82 us | 140.35 us | 140.98 us | Using fxhash (a6b434af) |
 
 Note: About times 1.2 times faster in part 2. No change in part 1.
 
@@ -126,18 +126,18 @@ Note: The implementation of Part 1 was not optimized meaningfully. It could be o
 
 #### fxhash used
 
-| Part | Min       | Avg       | Max       | Note                |
-| ---- | --------- | --------- | --------- | ------------------- |
-| 1    | 820.38 us | 822.48 us | 825.24 us | Using fxhash (TODO) |
-| 2    | 3.2765 us | 3.2784 us | 3.2803 us | Using fxhash (TODO) |
+| Part | Min       | Avg       | Max       | Note                    |
+| ---- | --------- | --------- | --------- | ----------------------- |
+| 1    | 820.38 us | 822.48 us | 825.24 us | Using fxhash (a6b434af) |
+| 2    | 3.2765 us | 3.2784 us | 3.2803 us | Using fxhash (a6b434af) |
 
 Note: About 2 times faster in part 1 and 1.5 times in part 2
 
 #### Part 1 parallelized
 
-| Part | Min       | Avg       | Max       | Note                         |
-| ---- | --------- | --------- | --------- | ---------------------------- |
-| 1    | 108.17 us | 109.59 us | 111.11 us | Palallized with rayon (TODO) |
+| Part | Min       | Avg       | Max       | Note                             |
+| ---- | --------- | --------- | --------- | -------------------------------- |
+| 1    | 108.17 us | 109.59 us | 111.11 us | Palallized with rayon (e3b8945e) |
 
 Note: More than 5 times faster
 
@@ -146,7 +146,7 @@ Note: More than 5 times faster
 ### Day 8
 
 <details>
-<summary>3.2us + 84.9us</summary>
+<summary>3.2 us + 84.9 us</summary>
 
 | Part | Min       | Avg       | Max       | Note                        |
 | ---- | --------- | --------- | --------- | --------------------------- |
