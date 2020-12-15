@@ -1,15 +1,15 @@
 use anyhow::{Context, Result};
+use fxhash::FxHashMap;
 use regex::Regex;
-use std::collections::HashMap;
 
-type Passport = HashMap<String, String>;
+type Passport = FxHashMap<String, String>;
 
 #[aoc_generator(day4)]
 pub fn parse_input(input: &str) -> Result<Vec<Passport>> {
     let mut passports: Vec<Passport> = Vec::new();
 
     for pairs in input.split("\n\n").map(|pairs| pairs.replace('\n', " ")) {
-        let mut passport = Passport::new();
+        let mut passport = Passport::default();
         for pair in pairs.split(' ') {
             ensure!(pair.matches(':').count() == 1, "Excactly one colon");
             let sp: Vec<_> = pair.split(':').collect();

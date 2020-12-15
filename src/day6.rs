@@ -1,13 +1,13 @@
-use std::collections::{HashMap, HashSet};
+use fxhash::{FxHashMap, FxHashSet};
 
-type GroupAnswers = HashMap<char /*Question*/, HashSet<u8> /*Per group person numbers who answered yes */>;
+type GroupAnswers = FxHashMap<char /*Question*/, FxHashSet<u8> /*Per group person numbers who answered yes */>;
 
 #[aoc_generator(day6)]
 pub fn parse_input(input: &str) -> Vec<GroupAnswers> {
     let mut group_answers_list: Vec<GroupAnswers> = Vec::new();
 
     for group_lines in input.split("\n\n") {
-        let mut answered_yes_by: GroupAnswers = HashMap::new();
+        let mut answered_yes_by: GroupAnswers = FxHashMap::default();
         let mut person_num = 0;
         for line in group_lines.split('\n') {
             person_num += 1;

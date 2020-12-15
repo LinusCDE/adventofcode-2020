@@ -1,13 +1,13 @@
 use anyhow::Result;
-use std::collections::{HashMap, HashSet};
+use fxhash::{FxHashMap, FxHashSet};
 
 type Bag = u16;
 
 #[derive(Debug, Default)]
 pub struct Bags {
     bag_id_counter: u16,
-    bag_ids: HashMap<String, Bag>,
-    containments: HashMap<Bag, HashSet<(Bag, u8)>>,
+    bag_ids: FxHashMap<String, Bag>,
+    containments: FxHashMap<Bag, FxHashSet<(Bag, u8)>>,
 }
 
 impl Bags {
@@ -29,7 +29,7 @@ impl Bags {
         return bag;
     }
 
-    pub fn get_bag_containments(&self, bag: Bag) -> Option<&HashSet<(Bag, u8)>> {
+    pub fn get_bag_containments(&self, bag: Bag) -> Option<&FxHashSet<(Bag, u8)>> {
         self.containments.get(&bag)
     }
 

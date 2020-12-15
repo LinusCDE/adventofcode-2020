@@ -61,12 +61,21 @@ So far, these are the timings of solving the puzzles on my Ryzen 3700X CPU:
 ### Day 4
 
 <details>
-<summary>113.8 ns + 181.4 us</summary>
+<summary>15.8 us + 40.1 us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
-| 1    | 113.51 ns | 113.76 ns | 114.07 ns |
-| 2    | 180.90 us | 181.38 us | 182.24 us |
+| 1    | 32.554 us | 32.666 us | 32.777 us |
+| 2    | 75.914 us | 76.251 us | 76.728 us |
+
+#### fxhash used
+
+| Part | Min       | Avg       | Max       | Note                |
+| ---- | --------- | --------- | --------- | ------------------- |
+| 1    | 15.760 us | 15.806 us | 15.878 us | Using fxhash (TODO) |
+| 2    | 39.888 us | 40.126 us | 40.463 us | Using fxhash (TODO) |
+
+Note: About times 2 faster
 
 </details>
 
@@ -85,19 +94,28 @@ So far, these are the timings of solving the puzzles on my Ryzen 3700X CPU:
 ### Day 6
 
 <details>
-<summary>113.1 ns + 180.4 us </summary>
+<summary>112.8 ns + 140.4 us </summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
-| 1    | 112.82 ns | 113.08 ns | 113.39 ns |
-| 2    | 179.83 us | 180.44 us | 181.10 us |
+| 1    | 112.59 ns | 113.15 ns | 113.83 ns |
+| 2    | 184.55 us | 185.67 us | 187.03 us |
+
+#### fxhash used
+
+| Part | Min       | Avg       | Max       | Note                |
+| ---- | --------- | --------- | --------- | ------------------- |
+| 1    | 112.64 ns | 112.84 ns | 113.10 ns | Using fxhash (TODO) |
+| 2    | 139.82 us | 140.35 us | 140.98 us | Using fxhash (TODO) |
+
+Note: About times 1.2 times faster in part 2. No change in part 1.
 
 </details>
 
 ### Day 7
 
 <details>
-<summary>1.9ms + 4.4us</summary>
+<summary>822.5us + 3.3us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
@@ -105,6 +123,15 @@ So far, these are the timings of solving the puzzles on my Ryzen 3700X CPU:
 | 2    | 4.3457 us | 4.3570 us | 4.3707 us |
 
 Note: The implementation of Part 1 was not optimized meaningfully. It could be optimized by either passing along a "contains cache" or recursing up from children.
+
+#### fxhash used
+
+| Part | Min       | Avg       | Max       | Note                |
+| ---- | --------- | --------- | --------- | ------------------- |
+| 1    | 820.38 us | 822.48 us | 825.24 us | Using fxhash (TODO) |
+| 2    | 3.2765 us | 3.2784 us | 3.2803 us | Using fxhash (TODO) |
+
+Note: About 2 times faster in part 1 and 1.5 times in part 2
 
 </details>
 
@@ -118,7 +145,7 @@ Note: The implementation of Part 1 was not optimized meaningfully. It could be o
 | 1    | 7.4319 us | 7.4430 us | 7.4536 us |                             |
 | 2    | 1.0777 ms | 1.0795 ms | 1.0813 ms | Initial solution (4afbe335) |
 
-#### Parallelizing Part 2
+#### Part 2 parallelized
 
 | Part | Min       | Avg       | Max       | Note                             |
 | ---- | --------- | --------- | --------- | -------------------------------- |
@@ -126,7 +153,7 @@ Note: The implementation of Part 1 was not optimized meaningfully. It could be o
 
 Note: More than 5 times faster
 
-#### Use fxhash
+#### fxhash used
 
 | Part | Min       | Avg       | Max       | Note                    |
 | ---- | --------- | --------- | --------- | ----------------------- |
