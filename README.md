@@ -115,7 +115,7 @@ Note: About times 1.2 times faster in part 2. No change in part 1.
 ### Day 7
 
 <details>
-<summary>822.5us + 3.3us</summary>
+<summary>109.6 us + 3.3 us</summary>
 
 | Part | Min       | Avg       | Max       |
 | ---- | --------- | --------- | --------- |
@@ -132,6 +132,14 @@ Note: The implementation of Part 1 was not optimized meaningfully. It could be o
 | 2    | 3.2765 us | 3.2784 us | 3.2803 us | Using fxhash (TODO) |
 
 Note: About 2 times faster in part 1 and 1.5 times in part 2
+
+#### Part 1 parallelized
+
+| Part | Min       | Avg       | Max       | Note                         |
+| ---- | --------- | --------- | --------- | ---------------------------- |
+| 1    | 108.17 us | 109.59 us | 111.11 us | Palallized with rayon (TODO) |
+
+Note: More than 5 times faster
 
 </details>
 

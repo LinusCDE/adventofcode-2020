@@ -1,5 +1,6 @@
 use anyhow::Result;
 use fxhash::{FxHashMap, FxHashSet};
+use rayon::prelude::*;
 
 type Bag = u16;
 
@@ -106,7 +107,11 @@ pub fn parse_input(input: &str) -> Result<Bags> {
 pub fn solve_part1(input: &Bags) -> Result<usize> {
     //input.bags().for_each(|bag| println!("Bag: {:?}", input.get_color(*bag)));
     let searched_bag = input.get_bag("shiny gold").ok_or(anyhow!("Shiny gold bag not found"))?;
-    Ok(input.bags().filter(|bag| input.contains_bag_recursively(**bag, searched_bag)).count())
+    Ok(input
+        .bags()
+        .par_bridge()
+        .filter(|bag| input.contains_bag_recursively(**bag, searched_bag))
+        .count())
 }
 
 #[aoc(day7, part2)]
