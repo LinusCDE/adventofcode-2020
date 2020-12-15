@@ -32,7 +32,7 @@ pub fn has_required_fields(passport: &Passport) -> bool {
 }
 
 #[aoc(day4, part1)]
-pub fn solve_part1(input: &Vec<Passport>) -> usize {
+pub fn solve_part1(input: &[Passport]) -> usize {
     input.iter().filter(|passport| has_required_fields(passport)).count()
 }
 
@@ -72,6 +72,6 @@ pub fn validate_entries(passport: &Passport) -> Result<()> {
 }
 
 #[aoc(day4, part2)]
-pub fn solve_part2(input: &Vec<Passport>) -> usize {
+pub fn solve_part2(input: &[Passport]) -> usize {
     input.iter().filter(|passport| validate_entries(passport).is_ok()).count()
 }

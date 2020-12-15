@@ -32,12 +32,12 @@ pub fn parse_input(input: &str) -> Vec<Seat> {
 }
 
 #[aoc(day5, part1)]
-pub fn solve_part1(input: &Vec<Seat>) -> u16 {
+pub fn solve_part1(input: &[Seat]) -> u16 {
     input.iter().map(|seat| seat.seat_id()).max().unwrap()
 }
 
 #[aoc(day5, part2)]
-pub fn solve_part2(input: &Vec<Seat>) -> Result<u16> {
+pub fn solve_part2(input: &[Seat]) -> Result<u16> {
     let mut ids: Vec<u16> = input.iter().map(|seat| seat.seat_id()).collect();
     ids.sort();
 

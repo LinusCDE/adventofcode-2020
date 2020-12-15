@@ -42,7 +42,7 @@ pub enum ExecutionResult {
     },
 }
 
-pub fn run_program(instructions: &Vec<Instruction>) -> ExecutionResult {
+pub fn run_program(instructions: &[Instruction]) -> ExecutionResult {
     let mut pc: i16 = 0;
     let mut acc: i16 = 0;
 
@@ -77,7 +77,7 @@ pub fn run_program(instructions: &Vec<Instruction>) -> ExecutionResult {
 }
 
 #[aoc(day8, part1)]
-pub fn solve_part1(input: &Vec<Instruction>) -> Result<i16> {
+pub fn solve_part1(input: &[Instruction]) -> Result<i16> {
     match run_program(input) {
         ExecutionResult::InfiniteLoop { acc } => Ok(acc),
         ExecutionResult::Terminated { .. } => Err(anyhow!("Not expected to terminate!")),

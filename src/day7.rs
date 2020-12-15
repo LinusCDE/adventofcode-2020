@@ -16,6 +16,7 @@ impl Bags {
         self.bag_ids.get(color).map(|bag| *bag)
     }
 
+    #[allow(dead_code)]
     pub fn get_color(&self, bag: Bag) -> Option<String> {
         self.bag_ids.iter().find(|(_, id)| **id == bag).map(|(color, _)| color.to_owned())
     }
@@ -36,7 +37,7 @@ impl Bags {
 
     pub fn add_bag_containment(&mut self, bag: Bag, another_bag: Bag, amount: u8) -> Result<()> {
         let bag_containments = self.containments.entry(bag).or_default();
-        if bag_containments.iter().any(|(bag, amount)| *bag == another_bag) {
+        if bag_containments.iter().any(|(bag, _)| *bag == another_bag) {
             bail!("This bag was already added!")
         }
         bag_containments.insert((another_bag, amount));
@@ -44,7 +45,7 @@ impl Bags {
     }
 
     pub fn bags(&self) -> impl Iterator<Item = &Bag> {
-        self.bag_ids.iter().map(|(color, id)| id)
+        self.bag_ids.iter().map(|(_, id)| id)
     }
 
     pub fn contains_bag_recursively(&self, bag: Bag, searched_bag: Bag) -> bool {

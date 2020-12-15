@@ -2,14 +2,11 @@ use anyhow::Result;
 
 #[aoc_generator(day1)]
 pub fn parse_input(input: &str) -> Vec<u16> {
-    input
-        .split('\n')
-        .map(|line| line.parse().unwrap())
-        .collect()
+    input.split('\n').map(|line| line.parse().unwrap()).collect()
 }
 
 #[aoc(day1, part1)]
-pub fn solve_part1(input: &Vec<u16>) -> Result<u32> {
+pub fn solve_part1(input: &[u16]) -> Result<u32> {
     for i in 0..input.len() {
         for j in 0..input.len() {
             if i == j {
@@ -27,7 +24,7 @@ pub fn solve_part1(input: &Vec<u16>) -> Result<u32> {
 }
 
 #[aoc(day1, part2)]
-pub fn solve_part2(input: &Vec<u16>) -> Result<u64> {
+pub fn solve_part2(input: &[u16]) -> Result<u64> {
     for i in 0..input.len() {
         for j in 0..input.len() {
             for k in 0..input.len() {

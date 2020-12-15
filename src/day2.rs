@@ -28,7 +28,7 @@ pub fn parse_input(input: &str) -> Vec<Entry> {
 }
 
 #[aoc(day2, part1)]
-pub fn solve_part1(input: &Vec<Entry>) -> u16 {
+pub fn solve_part1(input: &[Entry]) -> u16 {
     let mut valid_passwords = 0;
 
     for entry in input {
@@ -42,7 +42,7 @@ pub fn solve_part1(input: &Vec<Entry>) -> u16 {
 }
 
 #[aoc(day2, part2)]
-pub fn solve_part2(input: &Vec<Entry>) -> u16 {
+pub fn solve_part2(input: &[Entry]) -> u16 {
     let mut valid_passwords = 0;
 
     for entry in input {

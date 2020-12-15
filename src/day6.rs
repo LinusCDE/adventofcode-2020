@@ -23,12 +23,12 @@ pub fn parse_input(input: &str) -> Vec<GroupAnswers> {
 }
 
 #[aoc(day6, part1)]
-pub fn solve_part1(input: &Vec<GroupAnswers>) -> usize {
+pub fn solve_part1(input: &[GroupAnswers]) -> usize {
     input.iter().map(|ga| ga.len()).sum()
 }
 
 #[aoc(day6, part2)]
-pub fn solve_part2(input: &Vec<GroupAnswers>) -> usize {
+pub fn solve_part2(input: &[GroupAnswers]) -> usize {
     input
         .iter()
         .map(|ga| {
