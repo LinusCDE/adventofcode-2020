@@ -171,3 +171,15 @@ Note: More than 5 times faster
 Note: More than 2 times faster
 
 </details>
+
+### Day 9
+
+<details>
+<summary>47.1 us + 73.9 us</summary>
+
+| Part | Min       | Avg       | Max       |
+| ---- | --------- | --------- | --------- |
+| 1    | 46.882 us | 47.091 us | 47.381 us |
+| 2    | 73.148 us | 73.863 us | 74.691 us |
+
+</details>
